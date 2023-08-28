@@ -7,5 +7,20 @@
     <artifactId>hello-world-counter-app</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version> <!-- Use a more recent version of the plugin -->
+                <configuration>
+                    <source>1.8</source> <!-- Update this to 1.7 or later -->
+                    <target>1.8</target> <!-- Update this to 1.7 or later -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
+
 
