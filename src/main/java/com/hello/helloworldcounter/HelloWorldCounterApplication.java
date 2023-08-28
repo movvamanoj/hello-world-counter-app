@@ -1,12 +1,17 @@
-package com.hello.helloworldcounter;
+package com.hello;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@SpringBootApplication
-public class HelloWorldCounterApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(HelloWorldCounterApplication.class, args);
+@Controller
+public class HelloController {
+    private int counter = 0;
+
+    @GetMapping("/")
+    public String hello(Model model) {
+        counter++;
+        model.addAttribute("message", "hello-world-" + counter);
+        return "hello";
     }
 }
-
