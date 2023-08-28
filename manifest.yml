@@ -1,0 +1,4 @@
+applications:
+  - name: hello-counter-app
+    memory: 512M # Set the desired memory limit
+    path: target/hello-world-counter-app-1.0.0.jar # Path to your compiled JAR file
