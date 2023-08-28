@@ -1,14 +1,14 @@
-# Use an official OpenJDK runtime as a parent image
+# Use the official OpenJDK base image
 FROM openjdk:11-jre-slim
 
-# Set the working directory in the container
+# Set the working directory inside the container
 WORKDIR /app
 
-ARG JAR_FILE=target/hello-world-counter-app-1.0.0.jar
+# Copy the compiled JAR file into the container
+COPY target/hello-world-counter-app-1.0.0.jar app.jar
 
-COPY ${JAR_FILE} app.jar
-
+# Expose the port that the application will run on
 EXPOSE 9090
 
-# Specify the command to run your application
+# Command to run the application
 CMD ["java", "-jar", "app.jar"]
